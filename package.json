@@ -1,0 +1,63 @@
+{
+  "name": "proxie-ts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006 -s ./public",
+    "test-storybook": "test-storybook",
+    "build-storybook": "storybook build -s public"
+  },
+  "dependencies": {
+    "@mantine/core": "^6.0.21",
+    "@mantine/notifications": "^6.0.21",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@medplum/core": "^2.1.8",
+    "@medplum/definitions": "^2.1.8",
+    "@medplum/fhirpath": "^0.9.6",
+    "@medplum/fhirtypes": "^2.1.8",
+    "@medplum/react": "^2.1.8",
+    "@medplum/react-hooks": "^2.2.10",
+    "@next/mdx": "^14.2.3",
+    "@tabler/icons": "^3.5.0",
+    "@tabler/icons-react": "^3.5.0",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "20.4.5",
+    "@types/react": "18.2.16",
+    "@types/react-dom": "18.2.7",
+    "@vercel/og": "^0.6.2",
+    "autoprefixer": "10.4.14",
+    "axios": "^1.6.1",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.12",
+    "next": "13.4.12",
+    "next-absolute-url": "^1.2.2",
+    "postcss": "8.4.27",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.47.0",
+    "remark-gfm": "^4.0.0",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.1.1",
+    "@storybook/addon-interactions": "^7.1.1",
+    "@storybook/addon-links": "^7.1.1",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.1.1",
+    "@storybook/nextjs": "^7.1.1",
+    "@storybook/react": "^7.1.1",
+    "@storybook/test-runner": "^0.12.0",
+    "@storybook/testing-library": "^0.2.0",
+    "eslint-plugin-storybook": "^0.6.13",
+    "storybook": "^7.1.1"
+  },
+  "resolutions": {
+    "estree-util-build-jsx": "^2.2.2"
+  }
+}

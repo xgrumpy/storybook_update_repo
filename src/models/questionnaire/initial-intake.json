@@ -1,0 +1,241 @@
+{
+  "resourceType": "Questionnaire",
+  "title": "Get your own health assistant, Join Proxie",
+  "name": "Proxie Waitlist",
+  "status": "active",
+  "id": "initial-intake",
+  "description": "Get your own health assistant, Join Proxie",
+  "identifier": [
+    {
+      "system": "https://dev.proxiehealth.com/api/extensions/form_id",
+      "value": "initial-intake"
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://dev.proxiehealth.com/api/extensions/format",
+      "valueString": "YAML"
+    },
+    {
+      "url": "https://dev.lotuscares.ai/api/extensions/form_category",
+      "valueString": "SCN"
+    },
+    {
+      "url": "https://dev.lotuscares.ai/api/extensions/submit_text",
+      "valueString": "Join Waitlist"
+    }
+  ],
+  "item": [
+    {
+      "type": "display",
+      "text": "Enter your info below to get Proxie for your loved ones.\n",
+      "linkId": "display-1"
+    },
+    {
+      "text": "Patient Name",
+      "linkId": "Patient.name.text",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "linkId": "Patient.birthDate",
+      "text": "Birth Date",
+      "required": true,
+      "type": "date"
+    },
+    {
+      "linkId": "Patient.email",
+      "text": "Email",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "linkId": "Patient.sms",
+      "text": "Phone Number",
+      "type": "string"
+    },
+    {
+      "linkId": "Patient.forWho",
+      "text": "Who needs Proxie?",
+      "answerOption": [
+        {
+          "valueString": "Me"
+        },
+        {
+          "valueString": "A parent"
+        },
+        {
+          "valueString": "A child or sibling"
+        },
+        {
+          "valueString": "A friend"
+        },
+        {
+          "valueString": "Other family member"
+        }
+      ],
+      "type": "choice",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "drop-down"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "Patient.urgencyLevel",
+      "text": "What's the urgency of your need?",
+      "answerOption": [
+        {
+          "valueString": "Immediate need"
+        },
+        {
+          "valueString": "Urgent"
+        },
+        {
+          "valueString": "Within a month"
+        },
+        {
+          "valueString": "Within the next 90 days"
+        },
+        {
+          "valueString": "Not very urgent"
+        }
+      ],
+      "type": "choice",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "drop-down"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "Patient.knownConditions",
+      "text": "Known conditions?",
+      "prefix": "Our Care Coordinator will be able to help you with:",
+      "repeats": true,
+      "required": true,
+      "answerOption": [
+        {
+          "valueString": "Mental Health and Wellness"
+        },
+        {
+          "valueString": "Nutrition and Weight Management"
+        },
+        {
+          "valueString": "Alcohol Abuse Drug Abuse/ Substance Abuse"
+        },
+        {
+          "valueString": "Alzheimer's Disease and Related Dementia"
+        },
+        {
+          "valueString": "Arthritis (Osteoarthritis and Rheumatoid)"
+        },
+        {
+          "valueString": "Asthma"
+        },
+        {
+          "valueString": "Atrial Fibrillation"
+        },
+        {
+          "valueString": "Autism Spectrum Disorders"
+        },
+        {
+          "valueString": "Breast Cancer"
+        },
+        {
+          "valueString": "Chronic Kidney Disease"
+        },
+        {
+          "valueString": "Chronic Obstructive Pulmonary Disease"
+        },
+        {
+          "valueString": "Colorectal Cancer"
+        },
+        {
+          "valueString": "Diabetes"
+        },
+        {
+          "valueString": "Drug Abuse/ Substance Abuse"
+        },
+        {
+          "valueString": "Heart Disease"
+        },
+        {
+          "valueString": "Depression"
+        },
+        {
+          "valueString": "Heart Failure"
+        },
+        {
+          "valueString": "Hepatitis (Chronic Viral B & C)"
+        },
+        {
+          "valueString": "HIV/AIDS"
+        },
+        {
+          "valueString": "Hyperlipidemia (High cholesterol)"
+        },
+        {
+          "valueString": "Hypertension (High blood pressure)"
+        },
+        {
+          "valueString": "Ischemic Heart Disease"
+        },
+        {
+          "valueString": "Lung Cancer"
+        },
+        {
+          "valueString": "Osteoporosis"
+        },
+        {
+          "valueString": "Prostate Cancer"
+        },
+        {
+          "valueString": "Schizophrenia and Other Psychotic Disorders"
+        },
+        {
+          "valueString": "Stroke"
+        }
+      ],
+      "type": "choice",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "drop-down"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "Patient.zipCode",
+      "text": "Zip Code",
+      "required": true,
+      "repeats": true,
+      "type": "string"
+    },
+    {
+      "linkId": "Display.terms",
+      "type": "display",
+      "text": "By clicking submit, you agree to our [terms of service](https://dev.proxiehealth.com/terms).\n"
+    }
+  ]
+}

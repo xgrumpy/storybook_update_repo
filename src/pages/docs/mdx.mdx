@@ -1,0 +1,47 @@
+import DocsLayout from '@/components/layouts/docs';
+
+export const metadata = {
+  author: 'Proxie devs',
+  title: 'MDX Documentation',
+  description: 'Easily add new documentation pages with MDX.'
+}
+
+# Our Approach to MDX
+
+MDX is a powerful tool that allows us to write JSX in our Markdown documents. It brings the interactive power of React to Markdown.
+
+## Adding Similar Pages
+
+To add a similar page, follow these steps:
+
+1. Create a new `.mdx` file in the `src/pages/docs` directory.
+
+2. At the top of the file include the layout and metadata:
+
+```typescript
+
+import DocsLayout from '@/components/layouts/docs';
+
+export const metadata = {
+  author: 'Proxie devs',
+  title: 'MDX Documentation',
+  description: 'Easily add new documentation pages with MDX.'
+}
+
+```
+
+3. At the bottom of the file, include the layout component:
+
+```typescript
+
+export default function MDXPage({ children }) {
+  return <DocsLayout metadata={metadata}>{children}</DocsLayout>
+}
+
+```
+
+NextJS will automaticall wrap the content in the template and render the page.
+
+export default function MDXPage({ children }) {
+  return <DocsLayout metadata={metadata}>{children}</DocsLayout>
+}

@@ -1,0 +1,35 @@
+version: 0.2
+
+env:
+  variables:
+    LOTUS_URL: "https://dev.lotuscares.ai/api"
+  secrets-manager:
+    LOTUS_CLIENT_ID: dev/proxie-ts/config:LOTUS_CLIENT_ID
+    LOTUS_CLIENT_SECRET: dev/proxie-ts/config:LOTUS_CLIENT_SECRET
+    MEDPLUM_BASE_URL: dev/proxie-ts/config:MEDPLUM_BASE_URL
+    MEDPLUM_CLIENT_ID: dev/proxie-ts/config:MEDPLUM_CLIENT_ID
+    PHASEZERO_EMAIL: dev/proxie-ts/config:PHASEZERO_EMAIL
+    PHASEZERO_PASSWORD: dev/proxie-ts/config:PHASEZERO_PASSWORD
+    PHASEZERO_TENANT_ID: dev/proxie-ts/config:PHASEZERO_TENANT_ID
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 339712821437.dkr.ecr.us-east-2.amazonaws.com
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t frontend -f ecs.Dockerfile --build-arg LOTUS_CLIENT_ID=$LOTUS_CLIENT_ID --build-arg LOTUS_CLIENT_SECRET=$LOTUS_CLIENT_SECRET --build-arg LOTUS_URL=$LOTUS_URL --build-arg MEDPLUM_BASE_URL=$MEDPLUM_BASE_URL --build-arg MEDPLUM_CLIENT_ID=$MEDPLUM_CLIENT_ID --build-arg PHASEZERO_EMAIL=$PHASEZERO_EMAIL --build-arg PHASEZERO_PASSWORD=$PHASEZERO_PASSWORD --build-arg PHASEZERO_TENANT_ID=$PHASEZERO_TENANT_ID .
+      - docker tag frontend 339712821437.dkr.ecr.us-east-2.amazonaws.com/proxie-development-frontend
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push 339712821437.dkr.ecr.us-east-2.amazonaws.com/proxie-development-frontend
+      - printf '[{"name":"proxie-development-frontend-container", "imageUri":"339712821437.dkr.ecr.us-east-2.amazonaws.com/proxie-development-frontend:latest"}]' > imagedefinitions.json
+
+artifacts:
+    files: imagedefinitions.json

@@ -1,0 +1,43 @@
+import DocsLayout from '@/components/layouts/docs';
+import {IconCannabis} from '@tabler/icons-react';
+import IntakeResponse from '@/models/questionnaireResponse/intake.json';
+
+export const metadata = {
+  author: 'Proxie devs',
+  title: 'Developer Documentation | API',
+  description: 'We provide a RESTful API for developers to interact with our platform.'
+}
+
+<IconCannabis size={32} className="mx-4" color="green" />
+
+# API Documentation
+
+Welcome to the Proxie Health API documentation. Our API uses FHIR Questionnaire and QuestionnaireResponse to store arbitrary data from patients in multiple formats.
+
+## API Paths
+
+Our API is structured around several paths, each designed to offer specific functionality. Here are some of the main paths:
+
+- `/api/healthcheck`: This path always replies if the server is alive.
+- `/api/extensions/[name]`: This path provides the URLS that describe our extensions.
+- `/api/user/login`: This path is to login.
+- `/api/user/register`: This path is to create new users.
+- `/api/user/fhir/qr`: This path is used to interact with the FHIR QuestionnaireResponse.
+
+More detailed information about each path, including the available endpoints, request parameters, and response formats, will be provided in the future.
+
+## environments
+
+[dev](https://dev.lotuscares.ai/docs/) https://dev.lotuscares.ai/docs/
+
+[prod](https://app.lotuscares.ai/docs/) https://app.lotuscares.ai/docs/
+
+
+
+## Coming Soon: Swagger Documentation
+
+We're currently working on integrating Swagger into our API documentation. Swagger is a powerful tool for designing, building, and documenting APIs, and it will allow us to provide you with more detailed and interactive documentation. Stay tuned for updates!
+
+export default function MDXPage({ children }) {
+  return <DocsLayout metadata={ metadata }>{children}</DocsLayout>
+}

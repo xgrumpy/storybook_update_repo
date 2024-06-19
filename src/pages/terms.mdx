@@ -1,0 +1,44 @@
+import DocsLayout from '@/components/layouts/docs';
+
+export const metadata = {
+  author: 'Proxie devs',
+  title: 'Terms of Service',
+  description: 'Useful information about Proxie Health services and policies.'
+}
+
+
+## Terms of Service
+
+Your use of our services is governed by our comprehensive Terms of Service, which outline your rights and responsibilities as a user, as well as our obligations to you. We encourage you to read these terms carefully to understand how we operate and how we handle your information.
+
+[Read our full Terms of Service here](https://app.termly.io/policy-viewer/policy.html?policyUUID=d42e7287-66ad-4f8a-a075-672b6230e2ff)
+
+## Privacy Policy
+
+Protecting your privacy is at the core of our mission. Our Privacy Policy explains how we collect, use, and safeguard your personal information. We are dedicated to maintaining the confidentiality of your data and complying with all relevant privacy laws and regulations.
+
+[Read our full Privacy Policy here](https://app.termly.io/policy-viewer/policy.html?policyUUID=5390b1a7-b024-44cf-8486-f7633b815387)
+
+## Cookie Policy
+
+Some cookies are required for technical reasons in order for our Website to operate.
+
+[Learn more about our Cookie Policy here](https://app.termly.io/policy-viewer/policy.html?policyUUID=e77b8da5-9508-4b31-81d1-b7c1c22f4450)
+
+## Commitment to Regulatory Compliance
+
+Proxie Health adheres to all applicable healthcare regulations and standards, including HIPAA and GDPR, to ensure that we maintain the highest level of compliance. Our commitment to regulatory compliance ensures that your data is handled with the utmost care and respect.
+
+
+## Contact Us
+
+If you have any questions or concerns about our terms of service, privacy policy, or any other aspect of our services, please do not hesitate to contact us. Your trust is important to us, and we are here to support you.
+
+[Contact Us](mailto:dev+mailto@proxiehealth.com)
+
+**Thank you for choosing Proxie Health. Together, we are creating a healthier, happier future.**
+
+
+export default function MDXPage({ children }) {
+  return <DocsLayout metadata={ metadata }>{children}</DocsLayout>
+}

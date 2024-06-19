@@ -1,0 +1,46 @@
+import DocsLayout from '@/components/layouts/docs';
+import {IconMatchstick} from '@tabler/icons-react';
+import IntakeResponse from '@/models/questionnaireResponse/intake.json';
+
+export const metadata = {
+  author: 'Proxie devs',
+  title: 'Developer Documentation | Questionnaire Responses',
+  description: 'Proxie Health uses FHIR Questionnaire and QuestionnaireResponse to store arbitrary data from patients in multiple formats.'
+}
+
+<IconMatchstick size={32} className="mx-4" color="red" />
+
+# Our Forms Powered by FHIR
+
+Our forms are powered by [Medplum] Questionnaire and QuestionnaireResponse, which are FHIR (Fast Healthcare Interoperability Resources) resources designed to standardize and streamline the collection of health-related information.
+
+## Medplum QuestionnaireResponse
+
+The Medplum QuestionnaireResponse resource captures the answers to a questionnaire, linking them back to the corresponding questions. Key properties include:
+
+- **ID**: A unique identifier for the response.
+- **Questionnaire**: A reference to the questionnaire being responded to.
+- **Status**: Indicates the status of the response (e.g., in-progress, completed, amended).
+- **Subject**: The individual or entity the responses are about.
+- **Authored**: The date and time when the response was created.
+- **Items**: The actual responses to the questions, structured similarly to the questionnaire items.
+
+- [Medplum QuestionnaireResponse](https://www.medplum.com/questionnaireresponse)
+
+## Example
+
+A simple example of patient intake form response:
+
+<pre>
+<code>
+{ JSON.stringify(IntakeResponse, null, 2) }
+</code>
+</pre>
+
+## Playground
+
+Visit our [Form Playground](https://dev.lotuscares.ai/forms/demo/playground) to see how the form works.
+
+export default function MDXPage({ children }) {
+  return <DocsLayout metadata={ metadata }>{children}</DocsLayout>
+}

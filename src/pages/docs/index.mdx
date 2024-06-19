@@ -1,0 +1,103 @@
+import DocsLayout from '@/components/layouts/docs';
+
+export const metadata = {
+  author: 'Proxie devs',
+  title: 'Developer Documentation',
+  description: 'Proxie Health for developers is easily interoperable with other FHIR systems.'
+}
+
+# Care Coordination Interoperability Platform
+
+## Developer Documentation
+
+Welcome to the Proxie Health documentation page. Our platform is designed with safety and interoperability in mind, leveraging industry-standard technologies and best practices.
+
+## Interoperability
+
+We use FHIR (Fast Healthcare Interoperability Resources) to ensure that our platform is easily interoperable with other FHIR systems. This allows developers to easily integrate our platform with other healthcare systems and applications.
+
+### Medplum and FHIR
+
+In our infrastructure, we utilize Medplum, a highly interoperable healthcare data platform. Medplum is designed around the FHIR (Fast Healthcare Interoperability Resources) standard, which is a standard for exchanging healthcare information electronically.
+
+By using Medplum, we ensure that our platform can easily integrate with other FHIR-compliant systems and applications. This allows us to provide a more seamless and efficient service to our users.
+
+Medplum's FHIR types provide a strong typing system for our health data, ensuring data integrity and safety. This means that our platform can handle healthcare data in a consistent and reliable manner, reducing the risk of errors and improving the overall quality of our service.
+
+In addition, Medplum's FHIR types allow us to leverage the power of FHIR's resource-based model. This model provides a flexible and extensible framework for representing healthcare data, making it easier for us to adapt to the changing needs of the healthcare industry.
+
+
+[Learn more...](/docs/fhir)
+
+## Forms and Responses
+
+FHIR defines a set of resources for capturing and exchanging health-related information. Two key resources for our platform are Questionnaire and QuestionnaireResponse, which are used to create forms and capture responses from patients.
+
+[Forms](/docs/forms)
+
+[Responses](/docs/forms/responses)
+
+
+### MDX
+
+We're using Markdown with JSX (MDX) to create interactive and dynamic documentation pages. This allows us to easily embed React components and other interactive elements in our documentation.
+
+[Learn more...](/docs/mdx)
+
+### SDOH, Standardized Data Models, and Value Sets
+
+We recognize the importance of Social Determinants of Health (SDOH) in providing comprehensive healthcare services. SDOH refers to the conditions in the environments where people live, learn, work, and play that affect a wide range of health and quality-of-life outcomes and risks.
+
+To effectively capture and utilize SDOH data, we use standardized data models. These models provide a consistent and reliable framework for representing health data, ensuring that our platform can handle a wide range of health information.
+
+In addition, we use value sets to represent specific lists of codes derived from standard vocabularies. These value sets allow us to represent specific clinical concepts in a standardized way, improving the interoperability and consistency of our health data.
+
+By leveraging SDOH, standardized data models, and value sets, we can provide a more comprehensive and effective service to our users. This approach allows us to consider a wide range of factors that can affect health outcomes, and to represent these factors in a consistent and interoperable way.
+
+### Infrastructure
+
+Our infrastructure is built on AWS, providing robust and scalable solutions for healthcare applications. We use Terraform for infrastructure as code, ensuring reproducibility and consistency across environments.
+
+### Cybersecurity
+
+We prioritize the security of our platform. We use Medplum and FHIR types to ensure the safety and interoperability of our health data. Our systems are designed to be secure and protect patient data.
+
+Data is encrypted at rest and in transit, ensuring that patient data is always protected. We use industry-standard encryption algorithms and protocols to secure our platform.
+
+Data is deanomized and deidentified to protect patient privacy. We follow best practices for data anonymization and deidentification to ensure that patient data is always safe and secure.
+
+Our systems and third parties are audited regularly to ensure compliance with healthcare regulations and standards. We conduct regular security audits and penetration tests to identify and address potential vulnerabilities.
+
+We're taking steps towards certification and compliance with industry standards such as HIPAA, GDPR, and HITRUST. We're committed to ensuring that our platform meets the highest standards of security and compliance.
+
+### Compliance
+
+We adhere to all relevant healthcare regulations and standards to ensure our platform is compliant and trustworthy.
+
+### APIs
+
+We provide both REST and GraphQL APIs, giving developers flexibility in how they interact with our platform. We also provide client keys for secure and authenticated access to our APIs.
+
+[API Documentation](/docs/api)
+
+### Test Suites and CI/CD
+
+We maintain comprehensive test suites to ensure the reliability of our platform. We use GitHub Actions for continuous integration and continuous deployment, ensuring that our platform is always up-to-date and bug-free.
+
+### Bots and Algorithms
+
+We use bots for automation and PhraseZero algorithms to ensure the safety and efficiency of our platform.
+
+### Data Storage
+
+We use AWS S3 for secure and scalable data storage, ensuring that patient data is always available and protected.
+
+We hope this documentation helps you understand our platform better. If you have any questions, feel free to reach out to us.
+
+### Seize the means of computation
+
+By applying industry standards at the highest level, we ensure that our platform is secure, reliable, and interoperable.
+
+export default function MDXPage({ children }) {
+  return <DocsLayout metadata={ metadata }>{children}</DocsLayout>
+}

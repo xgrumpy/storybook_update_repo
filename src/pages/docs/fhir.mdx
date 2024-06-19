@@ -1,0 +1,74 @@
+import DocsLayout from '@/components/layouts/docs';
+
+export const metadata = {
+  author: 'Proxie devs',
+  title: 'FHIR Documentation',
+  description: 'Proxie Health provides FHIR over REST & GraphQL.'
+}
+
+# FHIR & Interoperability
+
+## Medplum
+
+Medplum is a healthcare data platform that we use in our infrastructure. It is designed around the FHIR (Fast Healthcare Interoperability Resources) standard, which is a standard for exchanging healthcare information electronically.
+
+One of the key features of Medplum is its FHIR types. These types provide a strong typing system for our health data, ensuring data integrity and safety. For example, the `Patient` type in Medplum includes all possible attributes for a patient, such as `name`, `birthDate`, `gender`, `address`, and many more. This means that our platform can handle patient data in a consistent and reliable manner, reducing the risk of errors and improving the overall quality of our service.
+
+In addition, Medplum's FHIR types are compatible with standardized data models. This compatibility allows us to represent specific clinical concepts in a standardized way, improving the interoperability and consistency of our health data.
+
+By using Medplum and its FHIR types, we ensure that our platform can easily integrate with other FHIR-compliant systems and applications. This allows us to provide a more seamless and efficient service to our users.
+
+## Interoperability & Open Standards
+
+Interoperability is crucial in healthcare for several reasons:
+
+**Patient Care**: Interoperability allows different healthcare systems to communicate and share patient data, leading to more coordinated and efficient care. It ensures that healthcare providers have access to the most up-to-date and comprehensive patient information, enabling them to make better-informed decisions.
+
+**Data Analysis**: Interoperability facilitates the aggregation of health data from various sources, which is essential for population health management, research, and policy-making.
+
+**Cost Efficiency**: By reducing duplication of tests and procedures, interoperability can lead to significant cost savings.
+
+**Open source** is beneficial for businesses and developers for the following reasons:
+
+**Collaboration**: Open source projects allow developers from around the world to collaborate and contribute, leading to more robust and innovative solutions.
+
+**Transparency**: With open source, businesses and developers can inspect the code to ensure it meets their needs and standards. This transparency builds trust and allows for more control over the software.
+
+**Cost Efficiency**: Open source software is typically free to use, reducing costs for businesses. It also allows developers to learn from and build upon existing projects, saving development time.
+
+**Interoperability**: Open source projects often adhere to open standards, making them more interoperable with other systems. This is particularly important in fields like healthcare, where data needs to be shared across various systems.
+
+## FHIR Resources
+
+### Patient
+
+The `Patient` resource in FHIR is used to represent a person who is receiving care from a healthcare provider. This resource includes a wide range of attributes, such as `name`, `birthDate`, `gender`, `address`, and many more.
+
+Here's an example of how you might use the `Patient` resource in TypeScript with Medplum:
+
+```typescript
+import { Patient } from '@medplum/core';
+
+const examplePatient: Patient = {
+  resourceType: 'Patient',
+  name: [{
+    use: 'official',
+    family: 'Doe',
+    given: ['John']
+  }],
+  birthDate: '2000-01-01',
+  gender: 'male',
+  address: [{
+    use: 'home',
+    line: ['123 Main St'],
+    city: 'Anytown',
+    state: 'CA',
+    postalCode: '12345',
+    country: 'USA'
+  }]
+};
+```
+
+export default function MDXPage({ children }) {
+  return <DocsLayout metadata={metadata}>{children}</DocsLayout>
+}

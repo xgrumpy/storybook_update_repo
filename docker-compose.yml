@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+      args:
+        LOTUS_CLIENT_ID: abcd
+        LOTUS_CLIENT_SECRET: abcd
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    command: npm start

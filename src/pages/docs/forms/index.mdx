@@ -1,0 +1,83 @@
+import DocsLayout from '@/components/layouts/docs';
+import {IconMatchstick} from '@tabler/icons-react';
+import IntakeForm from '@/models/questionnaire/initial-intake.json';
+import { QuestionnaireForm } from '@medplum/react';
+
+export const metadata = {
+  author: 'Proxie devs',
+  title: 'Developer Documentation | Forms',
+  description: 'Proxie Health uses FHIR Questionnaire and QuestionnaireResponse to store arbitrary data from patients in multiple formats.'
+}
+
+<IconMatchstick size={32} className="mx-4" color="red" />
+
+# Our Forms Powered by FHIR
+
+Our forms are powered by [Medplum] Questionnaire and QuestionnaireResponse, which are FHIR (Fast Healthcare Interoperability Resources) resources designed to standardize and streamline the collection of health-related information.
+
+## Medplum Questionnaire
+
+The Medplum Questionnaire resource allows us to define a structured set of questions that can be used to gather specific information from our users. Key properties include:
+
+- **ID**: A unique identifier for the questionnaire.
+- **Title**: The name of the questionnaire.
+- **Status**: Indicates whether the questionnaire is active, draft, or retired.
+- **SubjectType**: Specifies the type of subjects (e.g., patient, practitioner) for whom the questionnaire is intended.
+- **Items**: A list of questions or groups of questions, which can be nested to form a hierarchical structure.
+
+
+## Medplum QuestionnaireResponse
+
+The Medplum QuestionnaireResponse resource captures the answers to a questionnaire, linking them back to the corresponding questions. Key properties include:
+
+- **ID**: A unique identifier for the response.
+- **Questionnaire**: A reference to the questionnaire being responded to.
+- **Status**: Indicates the status of the response (e.g., in-progress, completed, amended).
+- **Subject**: The individual or entity the responses are about.
+- **Authored**: The date and time when the response was created.
+- **Items**: The actual responses to the questions, structured similarly to the questionnaire items.
+
+## React Components
+
+The `medplum/react` package that we're using provides React components for rendering Questionnaire and QuestionnaireResponse resources. These components make it easy to create dynamic forms that can be customized based on the questionnaire definition.
+
+[Storybook](https://storybook.medplum.com/?path=/story/medplum-questionnaireform--basic)
+
+## Important Considerations
+
+When using these FHIR resources, there are a few important considerations to keep in mind:
+
+- **Interoperability**: These resources facilitate interoperability by adhering to FHIR standards, allowing for seamless integration with other healthcare systems.
+- **Flexibility**: Both Questionnaire and QuestionnaireResponse are highly flexible, supporting a wide range of question types and answer formats.
+- **Security and Privacy**: Ensuring the security and privacy of patient information is paramount. Medplum’s implementation of FHIR resources includes robust security measures to protect sensitive data.
+- **Regulatory Compliance**: Using FHIR resources helps ensure compliance with healthcare regulations such as HIPAA, enabling better management of health data.
+
+By leveraging Medplum's FHIR resources, we are able to provide a more efficient, secure, and user-friendly experience for collecting and managing health information.
+
+### For more details, please visit Medplum’s documentation:
+
+- [Medplum Questionnaire](https://www.medplum.com/docs/api/fhir/resources/questionnaire)
+- [Medplum QuestionnaireResponse](https://www.medplum.com/questionnaireresponse)
+
+## Example
+
+A simple example of an intake form:
+
+<pre>
+<code>
+{ JSON.stringify(IntakeForm, null, 2) }
+</code>
+</pre>
+
+A proper object could be rendered inside a `QuestionnaireForm` component, inside a Layout with Medplum Provider.
+
+```jsx
+
+<QuestionnaireForm questionnaire={IntakeForm} />
+```
+
+[Learn about QuestionnaireResponse](/docs/forms/responses)
+
+export default function MDXPage({ children }) {
+  return <DocsLayout metadata={ metadata }>{children}</DocsLayout>
+}

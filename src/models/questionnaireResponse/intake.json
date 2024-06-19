@@ -1,0 +1,47 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "item": [
+    {
+      "id": "id-4",
+      "linkId": "Screening.Section1",
+      "text": "Living Situation",
+      "item": [
+        {
+          "id": "id-5",
+          "linkId": "markdown-2",
+          "text": "Here are some key identifier questions to better understand your wellness journey.\n\nPlease answer all questions to the best of your ability.\n\nAllow yourself enough time and get comfortable before getting started. There are 26 questions.\n",
+          "item": [],
+          "answer": []
+        },
+        {
+          "id": "id-6",
+          "linkId": "Patient.name.text",
+          "text": "Patient Name",
+          "item": [],
+          "answer": []
+        }
+      ],
+      "answer": []
+    },
+    {
+      "linkId": "Patient.zipCode",
+      "text": "Zip Code",
+      "answer": [
+        {
+          "valueString": "12143"
+        },
+        {
+          "valueString": "07030"
+        }
+      ],
+      "item": []
+    }
+  ],
+  "questionnaire": "Questionnaire/initial-intake",
+  "source": {
+    "reference": "Practitioner/e906fd1d-9b50-4c54-96e4-362986438255",
+    "display": "Daveed Silva"
+  },
+  "authored": "2024-06-15T14:35:10.624Z",
+  "status": "completed"
+}
