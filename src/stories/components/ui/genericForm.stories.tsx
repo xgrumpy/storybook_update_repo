@@ -22,7 +22,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const additionalContent = (
+const AdditionalContent: React.FC = () => (
   <>
     <Link className='ml-auto mt-4 mb-4 text-sm' href='/'>Forgot Password</Link>
     <input className="mt-32 appearance-none mx-auto rounded-3xl h-10 w-4/5 bg-primary text-white font-light margin-auto" type="submit" value="Login" />
@@ -42,7 +42,7 @@ export const Signup: Story = {
     },
     onSubmit: onSubmit,
     formHeading: 'Signup',
-    additionalContent: additionalContent,
+    additionalContent: <AdditionalContent />,
   },
 };
 
@@ -56,6 +56,6 @@ export const PaymentInfo: Story = {
     },
     onSubmit: ()=> {},
     formHeading: 'Signup',
-    additionalContent: additionalContent,
+    additionalContent: <AdditionalContent />,
   },
 };
