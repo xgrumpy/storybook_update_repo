@@ -30,6 +30,9 @@ const additionalContent = (
   </>
 );
 
+const onSubmit = (data: Record<string, string>) => {
+  return window.alert('Form submit clicked' + JSON.stringify(data));
+};
 
 export const Signup: Story = {
   args: {
@@ -37,6 +40,7 @@ export const Signup: Story = {
       email: { type: 'email', label: 'Email', required: true, autoComplete: 'email' },
       password: { type: 'pawssword', label: 'Password', required: true, autoComplete: 'password' },
     },
+    onSubmit: onSubmit,
     formHeading: 'Signup',
     additionalContent: additionalContent,
   },
@@ -50,6 +54,7 @@ export const PaymentInfo: Story = {
       password: { type: 'password', label: 'Password', required: true, autoComplete: 'current-password' },
       confirmPassword: { type: 'password', label: 'Confirm password', required: true, autoComplete: 'confirm-password' },
     },
+    onSubmit: ()=> {},
     formHeading: 'Signup',
     additionalContent: additionalContent,
   },

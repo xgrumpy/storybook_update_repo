@@ -11,26 +11,19 @@ type AdditionalContent = React.ReactElement<{ type: "submit" }>;
 
 type FormConfig = {
     formHeading: string;
-    fields: {
-        [key: string]: {
-            type: string;
-            label: string;
-            autoComplete: string | undefined;
-            required: boolean;
-        };
-    };
+    
     onSubmit: SubmitHandler<Record<string, string>>;
     additionalContent: AdditionalContent;
 };
 
 
-const GenericForm: React.FC<FormConfig> = ({ formHeading, fields, onSubmit, additionalContent }) => {
+const GenericForm1: React.FC<FormConfig> = ({ formHeading, onSubmit, additionalContent }) => {
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
-    console.log(fields);
+    // console.log(fields);
     const imageStyle = {
         color: 'transparent',
         width: '444px',
@@ -47,7 +40,7 @@ const GenericForm: React.FC<FormConfig> = ({ formHeading, fields, onSubmit, addi
             <div className="flex w-full">
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-2/3 h1/2 z-10 mx-auto mt-56">
                     <h2 className="mb-32 sm:text-center lg:text-left">{formHeading}</h2>
-                    {Object.keys(fields).map((fieldName) => (
+                    {/* {Object.keys(fields).map((fieldName) => (
                         <div key={fieldName} className='relative'>
                             <input className="rounded-lg bg-grayLightest py-3 px-3.5 mb-3 w-full" placeholder={fields[fieldName].label} type={fields[fieldName].type === "password" ? inputType : fields[fieldName].type} autoComplete={fields[fieldName].autoComplete}
                                 {...register(`${fieldName}`, { required: fields[fieldName].required })} /> {fields[fieldName].type === 'password' &&
@@ -62,7 +55,7 @@ const GenericForm: React.FC<FormConfig> = ({ formHeading, fields, onSubmit, addi
                                     />}
                             {errors[fieldName] && <span>This field is required</span>}
                         </div>
-                    ))}
+                    ))} */}
                     {additionalContent}
                 </form>
             </div>
@@ -89,4 +82,4 @@ const GenericForm: React.FC<FormConfig> = ({ formHeading, fields, onSubmit, addi
     );
 };
 
-export default GenericForm;
+export default GenericForm1;
