@@ -1,33 +1,44 @@
+'use client'
 import Image from 'next/image';
 import Link from 'next/link';
 import { User } from '@/types/UserTypes';
 import ProxieLogo from '@/images/proxie-logo.png';
-import NavProfile from '@/images/nav-profile.png';
-import NavCareTeam from '@/images/nav-careteam.png';
-import NavCarePlan from '@/images/nav-care-plan.png';
-import NavMore from '@/images/nav-more.png';
-import NavHome from '@/images/nav-home.png';
+import { PROFILESVG, CAREPLANSVG, CARETEAMSVG, SETTINGSSVG, HOMESVG,HOMEICONSVG, MORESVG, CarePlanSVG2 } from '@/images/svgConstants';
 import NavNoti from '@/images/nav-noti.png';
-import NavMobileHome from '@/images/nav-mobile-home.png'
+import { usePathname } from 'next/navigation'
 interface HeaderProps {
   user?: User,
-  onLogin: ()=> void,
-  onLogout: ()=> void,
-  onCreateAccount: ()=> void,
-  mobile: boolean;
+  mobile?: boolean;
 }
 interface StoryBookProps {
   mobile: boolean;
 }
+interface SVGWrapperProps {
+  children: React.ReactNode;
+  className: string;
+  // include other props as needed
+}
 
-export default function Header({user }: HeaderProps, mobile :StoryBookProps) {
+export const SVGWrapper: React.FC<SVGWrapperProps> = ({ children, ...props }) => {
+  return (
+
+    <div {...props}>
+      {children}
+    </div>
+  )
+
+}
+
+export default function Header({ }: HeaderProps, mobile: StoryBookProps) {
+  const user = { name: "Brian" }
+
   const headerStyle = {
     position: 'absolute',
     left: 0
   };
 
   const imageContainer = {
-    maxWidth:'139px',
+    maxWidth: '139px',
     maxHeight: '34px',
   };
 
@@ -35,101 +46,134 @@ export default function Header({user }: HeaderProps, mobile :StoryBookProps) {
     {
       key: 'Home',
       value: '/',
-      icon: NavHome
+      icon: HOMESVG
 
     },
     {
       key: 'Care Plan',
-      value: '/',
-      icon: NavCarePlan
+      value: '/CarePlan',
+      icon: CAREPLANSVG
     },
     {
-      key: 'Care Team',
-      value: '/',
-      icon: NavCareTeam
+      key: 'Coaching',
+      value: '/Coaching',
+      icon: CARETEAMSVG
 
     },
     {
       key: 'Profiles',
-      value: '/',
-      icon: NavProfile
+      value: '/Profiles',
+      icon: PROFILESVG
     },
     {
       key: 'More',
       value: '/',
-      icon: NavMore
+      icon: MORESVG
     },
 
   ]
+
   const linksArrayMobile = [
     {
       key: 'Care Plan',
-      value: '/',
-      icon: NavCarePlan
+      value: '/CarePlan',
+      icon: CAREPLANSVG
     },
     {
-      key: 'Care Team',
-      value: '/',
-      icon: NavCareTeam
+      key: 'Coaching',
+      value: '/Coaching',
+      icon: CARETEAMSVG
 
     },
     {
       key: undefined,
       value: '/',
-      icon: NavMobileHome
+      icon: HOMEICONSVG
 
     },
     {
       key: 'Profiles',
-      value: '/',
-      icon: NavProfile
+      value: '/Profiles',
+      icon: PROFILESVG
     },
     {
       key: 'More',
       value: '/',
-      icon: NavMore
+      icon: SETTINGSSVG
     },
 
   ]
 
-  const additionalClass = mobile ? 'absolute left-0' : '';
+  // const linksArrayMobile = [
+
+  //   {
+  //     key: 'Care Team',
+  //     value: '/',
+  //     icon: LOCATIONSVG
+  //   //Should include PROFILESVG somehow
+
+  //   },
+  //   {
+  //     key: 'Profiles',
+  //     value: '/Profiles',
+  //     icon: PROFILESVG
+  //   // Should include LOCATIONSVG somehow
+  //   }
+
+  // ]
+
+
+  // return(
+  //     <div>
+  //     <div className="flex mr-auto text-slate-400 md:ml-24 md:hidden ">
+  //       {user && linksArrayMobile.map(link => {
+  //         return (
+  //           <Link key={`link-${link.key}`} href={link.value} className='flex flex-col mx-auto p-2 w-1/5'>
+  //             <SVGWrapper className='mx-auto !stroke-primaryBlue'>
+  //             {link.icon({ height: 15, width: 14 })}
+  //             </SVGWrapper>
+  //             <span className='m-auto md:ml-4 text-[11px]'>
+  //               {link.key}
+  //             </span>
+  //           </Link>
+  //         )
+  //       })}
+  //     </div>
+  //   </div>
+  // )
+  const router = usePathname();
 
   return (
-    <header className={`min-w-full fixed md:top-0 md:pt-4 ${additionalClass}`}>
-      <div className='sm:hidden md:block'>
-      <div className='pb-4 flex justify-between items-center'>
-        <div className="md:ml-10 md:block sm:hidden">
-          <Image
-            src={ProxieLogo}
-            alt="Proxie Logo"
-            width={139}
-            height={34}
-            priority
-            data-testid="proxie-logo"
-            style={imageContainer}
-          />
-        </div>
-        <div className="flex mr-auto text-slate-400 md:ml-24	">
-          {user && linksArray.map(link => {
-            return (
-              <Link key={`link-${link.key}`} href={link.value} className='flex p-4'>
-                <Image
-                  src={link.icon}
-                  alt="Proxie Logo"
-                  width={32}
-                  height={32}
-                  priority
-                  data-testid="proxie-logo"
-                  className='max-h-8 w-8'
-                />
-                <span className='my-auto md:ml-4'>
+    <header style={mobile && headerStyle} className="z-40 w-screen max-h-fit fixed md:top-0 md:pt-1 sm:bottom-0 sm:bg-primaryBlue sm:text-white md:bg-white">
+      <div className='sm:hidden md:block shadow-md'>
+        <div className='pb-1 flex justify-between items-center'>
+          <div className="md:ml-10 md:block sm:hidden">
+            <Image
+              src={ProxieLogo}
+              alt="Proxie Logo"
+              width={139}
+              height={34}
+              priority
+              data-testid="proxie-logo"
+              style={imageContainer}
+            />
+          </div>
+          <div className="flex mr-auto text-slate-400 md:ml-24	">
+            {user && linksArray.map(link => {
+              return (
+                <Link key={`link-${link.key}`} href={link.value} className='flex p-4'>
+                  <SVGWrapper className='!stroke-primaryBlack '>
+                    {/* {link.icon({ height: !link.key ? 61 : 32, width: !link.key ? 61 : 32})} */}
+                    {link.icon({ height: !link.key ? 61 : 32, width: !link.key ? 61 : 32, isActive: router == link.value })}
+                  </SVGWrapper>
+                  <span className='my-auto md:ml-4 text-slate-400'>
                     {link.key}
-                </span>
-              </Link>
-            )
-          })}
-        </div>
-{user &&        <div className="relative">
+                  </span>
+                </Link>
+              )
+            })}
+          </div>
+          {user && <div className="relative">
             <Image
               src={NavNoti}
               alt="Proxie Logo"
@@ -139,27 +183,20 @@ export default function Header({user }: HeaderProps, mobile :StoryBookProps) {
               data-testid="proxie-logo"
               className='mr-4'
             />
-</div>
+          </div>
           }
+        </div>
       </div>
-      </div>
-      <div>
-      <div className="flex mr-auto text-slate-400 md:ml-24 md:hidden	">
+      <div className='h-20 md:hidden'>
+        <div className="flex mr-auto text-slate-400 md:ml-24 md:hidden ">
           {user && linksArrayMobile.map(link => {
             return (
               <Link key={`link-${link.key}`} href={link.value} className='flex flex-col mx-auto p-2 w-1/5'>
-                <Image
-                  src={link.icon}
-                  alt="Proxie Logo"
-                  width={!link.key ? 61:32}
-                  height={!link.key ? 61:32}
-                  priority
-                  data-testid="proxie-logo"
-                  // className='max-h-8 w-8 mx-auto'
-                  className='mx-auto'
-                />
+                <SVGWrapper className='mx-auto !stroke-white '>
+                {link.icon({ height: !link.key ? 61 : 32, width: !link.key ? 61 : 32, isActive: router == link.value })}
+                </SVGWrapper>
                 <span className='m-auto md:ml-4 text-[11px]'>
-                    {link.key}
+                  {link.key}
                 </span>
               </Link>
             )

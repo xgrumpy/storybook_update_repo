@@ -26,11 +26,11 @@ const onSubmit = (data: Record<string, string>) => {
 };
 
 const AdditionalContent: React.FC = () => (
-  <>
-    <Link className='ml-auto mt-4 mb-4 text-sm' href='/'>Forgot Password</Link>
-    <input className="mt-32 appearance-none mx-auto rounded-3xl h-10 w-4/5 bg-primaryBlue text-white font-light margin-auto" type="submit" value="Login" />
-    <span className='flex mx-auto text-sm text-light mt-4'>{`Don't have an account?`}<Link className='ml-1 text-indigo-500 underline' href="/"> Sign up</Link></span>
-  </>
+<>
+  <Link className='ml-auto mt-4 mb-4 text-sm' href='/'>Forgot Password</Link>
+  <input className="mt-32 appearance-none mx-auto rounded-3xl h-10 w-4/5 bg-primaryBlue text-white font-light margin-auto" type="submit" value="Login" />
+  <span className='flex mx-auto text-sm text-light mt-4'>{`Don't have an account?`}<Link className='ml-1 text-indigo-500 underline' href="/register"> Sign up</Link></span>
+</>
 );
 
 export const Default: Story = {
@@ -39,6 +39,6 @@ export const Default: Story = {
       email: { type: 'email', label: 'Email', required: true, autoComplete: 'email' },
     },
     formHeading: 'Login',
-    additionalContent: <AdditionalContent />,
-  }
+    additionalContent:  <AdditionalContent />,
+  },
 };

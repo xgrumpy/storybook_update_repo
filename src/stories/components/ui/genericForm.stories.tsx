@@ -26,13 +26,10 @@ const AdditionalContent: React.FC = () => (
   <>
     <Link className='ml-auto mt-4 mb-4 text-sm' href='/'>Forgot Password</Link>
     <input className="mt-32 appearance-none mx-auto rounded-3xl h-10 w-4/5 bg-primary text-white font-light margin-auto" type="submit" value="Login" />
-    <span className='flex mx-auto text-sm text-light mt-4'>{`Don't have an account?`}<Link className='ml-1 text-indigo-500 underline' href="/"> Sign up</Link></span>
+    <span className='flex mx-auto text-sm text-light mt-4'>{`Don't have an account?`}<Link className='ml-1 text-indigo-500 underline' href="/register"> Sign up</Link></span>
   </>
 );
 
-const onSubmit = (data: Record<string, string>) => {
-  return window.alert('Form submit clicked' + JSON.stringify(data));
-};
 
 export const Signup: Story = {
   args: {
@@ -40,9 +37,8 @@ export const Signup: Story = {
       email: { type: 'email', label: 'Email', required: true, autoComplete: 'email' },
       password: { type: 'pawssword', label: 'Password', required: true, autoComplete: 'password' },
     },
-    onSubmit: onSubmit,
     formHeading: 'Signup',
-    additionalContent: <AdditionalContent />,
+    additionalContent:  <AdditionalContent />,
   },
 };
 
@@ -54,8 +50,7 @@ export const PaymentInfo: Story = {
       password: { type: 'password', label: 'Password', required: true, autoComplete: 'current-password' },
       confirmPassword: { type: 'password', label: 'Confirm password', required: true, autoComplete: 'confirm-password' },
     },
-    onSubmit: ()=> {},
     formHeading: 'Signup',
-    additionalContent: <AdditionalContent />,
+    additionalContent:  <AdditionalContent />,
   },
 };

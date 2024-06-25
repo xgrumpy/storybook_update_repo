@@ -1,8 +1,6 @@
 import type { Preview } from "@storybook/react";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport"
 import "../src/app/globals.css";
-
-
 export const FIGMA_VIEWPORTS = {
   MOBILE : {
     name: "Mobile (Proxie)",

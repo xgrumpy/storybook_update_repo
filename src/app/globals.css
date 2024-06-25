@@ -96,3 +96,8 @@ h2 {
   color: #0057FF;
   font-weight: bold;
 }
+.home-nav{
+  position: absolute;
+  bottom: 2rem;
+  left:43%;
+}

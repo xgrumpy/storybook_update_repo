@@ -10,7 +10,6 @@ import NonVisibility from '@/images/visibility_off.png';
 type AdditionalContent = React.ReactElement<{ type: "submit" }>;
 
 type FormConfig = {
-    formHeading: string;
     fields: {
         [key: string]: {
             type: string;
@@ -20,6 +19,7 @@ type FormConfig = {
         };
     };
     onSubmit: SubmitHandler<Record<string, string>>;
+    formHeading: string;
     additionalContent: AdditionalContent;
 };
 
@@ -30,7 +30,8 @@ const GenericForm: React.FC<FormConfig> = ({ formHeading, fields, onSubmit, addi
         handleSubmit,
         formState: { errors },
     } = useForm();
-    console.log(fields);
+
+
     const imageStyle = {
         color: 'transparent',
         width: '444px',

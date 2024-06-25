@@ -7,12 +7,15 @@ module.exports = {
   ],
   theme: {
     fontSize: {
-      titleCard: '20px',
+      smallLink: '14px',
       splitCard: '16px',
+      titleCard: '20px',
+      subTitleCard: '19px',
+      headingCard: '24px',
       // sm: '0.8rem',
-      // base: '1rem',
-      // xl: '1.25rem',
-      // '2xl': '1.563rem',
+      base: '1rem',
+      xl: '1.5rem',
+      '2xl': '1.65rem',
       // '3xl': '1.953rem',
       // '4xl': '2.441rem',
       '5xl': '3.052rem',
@@ -40,12 +43,12 @@ module.exports = {
     },
     colors: {
       // Text
-      primary: '#030733',
-      secondary: '#6E6E8D',
+      proxiePrimary: '#030733',
+      proxieSecondary: '#6E6E8D',
       disabled: '#A8A8BF',
-      success: '#40C787',
       warning: '#FFCC30',
       alert: '#FF5151',
+      successGreen: '#40C787',
       fab: '#7A11A4',
 
 
@@ -53,6 +56,7 @@ module.exports = {
       primaryBlack: '#030733',
       secondaryBlack: '#38395F',
       primaryBlue: '#5964F7',
+      blueLight: '#B3B8FB',
       purple: '#BA22F7',
       white: '#FFFFFF',
 
@@ -94,5 +98,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }

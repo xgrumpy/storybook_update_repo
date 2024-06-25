@@ -1,10 +1,9 @@
 "use client"
-
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useContext, useReducer } from 'react';
 
 export type State = {
   user: {};
-  apiResponse: {};
+  apiResponse: any; // Define more specific types if possible
 };
 
 export type Action = {
@@ -17,9 +16,9 @@ const initialState: State = {
   apiResponse: {},
 };
 
-const store = createContext<{ state: State; dispatch: React.Dispatch<Action> } | undefined>(
-  undefined
-);
+// Providing a default value for the context
+const defaultDispatch: React.Dispatch<Action> = () => initialState; // Provide a no-op function or handle appropriately
+const store = createContext<{ state: State; dispatch: React.Dispatch<Action> }>({ state: initialState, dispatch: defaultDispatch });
 const { Provider } = store;
 
 const StateProvider = ({ children }: { children: React.ReactNode }) => {
