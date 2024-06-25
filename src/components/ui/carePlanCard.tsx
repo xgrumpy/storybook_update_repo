@@ -66,21 +66,20 @@ export default function CarePlanCard(mobile: StoryBookProps) {
 
   return (
     <div className='w-full outline outline-outlineGrey rounded-lg bg-white shadow-test'>
-      <span className='text-titleCard mt-10 ml-5 inline-block'>Care Plan Status</span>
+      <span className='text-titleCard font-semibold mt-10 ml-5 inline-block'>Care Plan Status</span>
       <div className='flex flex-row'>
-        <div className='flex flex-col text-center m-auto'>
-          <h3>Medical</h3>
-          <span className="text-purple text-headingCard">66%</span>
+        <div className='flex flex-col text-center m-auto  '>
+          <h3 className='mb-3 text-titleCard'>Medical</h3>
+          <span className="mb-3 text-purple text-headingCard">66%</span>
           <span>On Track</span>
         </div>
         <div className='flex flex-col text-center mx-auto'>
           <Chart />
         </div>
         <div className='flex flex-col text-center m-auto'>
-          <h3>Social</h3>
-          <span className='text-success text-headingCard'>98%</span>
+          <h3 className='mb-3 text-titleCard'>Social</h3>
+          <span className=' mb-3 text-success text-headingCard'>98%</span>
           <span>On Track</span>
-
         </div>
       </div>
     </div>

@@ -71,6 +71,9 @@ module.exports = {
       // BG
 
       outlineGrey: '#E5E5F2',
+
+      customRed: '#ff5151',
+      customGreen: '#40c787',
       // cardRed: '#FF5151',
       // tahiti: {
       //   100: '#cffafe',
@@ -88,6 +91,9 @@ module.exports = {
     },
 
     extend: {
+      maxWidth: {
+        '1000': '1000px',
+      },
       boxShadow: {
         'test': '0 4px 10px 0 rgba(0, 0, 0, 0.08)',
       },
@@ -95,6 +101,21 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      colors: {
+        'custom-blue-light': '#59cef7',
+        'custom-blue-dark': '#596df7',
+        'custom-blue-middle': '#5999f7',
+      },
+      margin: {
+        '15p': '15%',
+        '33p': '33%'
+      },
+      opacity: {
+        '20': '0.2',
+      },
+      objectFit: {
+        'cover': 'cover',
       },
     },
   },

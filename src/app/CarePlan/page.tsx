@@ -30,12 +30,14 @@ const CorePlanForm: React.FC<{}> = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-gray-50 p-8 mt-20">
-      <div className="space-y-8">
-        <UserProfile />
-        <CarePlan />
-        <SuppliesStatus />
-        <CareTips />
+    <div className="flex  justify-center bg-gray-100">
+      <div className="max-w-1000 items-center bg-gray-50 pt-24 pb-5">
+        <div className="space-y-8">
+          <UserProfile/>
+          <CarePlan />
+          <SuppliesStatus />
+          <CareTips />
+        </div>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const UserProfile: React.FC = () => {
   return (
-    <div className="p-4 bg-white rounded shadow-md">
+    <div className="p-4 bg-white rounded">
       <div >
         <div className="flex">
           <Image
@@ -18,27 +18,30 @@ const UserProfile: React.FC = () => {
             className='max-h-10 w-10'
           // style={}
           />
-          <div className="ml-4">
-            <p className="text-lg font-semibold">Good evening, Beth 👋</p>
+          <div className="ml-3 flex justify-center items-center">
+            <p className="font-semibold text-headingCard">Good evening, Beth 👋</p>
           </div>
         </div>
         <div className="flex items-center justify-between">
           <div className="items-center w-1/2 p-4">
-            <SplitHalfCard
-              name="Yvonne Adams"
-              relationship="Mom"
-              location="Orlando, FL"
-              age="72"
-              temp="98"
-            />
-            <SplitHalfCardDescription
-              name="Amazon Echo"
-              description="Get instant information, control smart devices, and enjoy entertainment with voice control."
-            />
+            <div className="mb-3">
+              <SplitHalfCard
+                name="Yvonne Adams"
+                relationship="Mom"
+                location="Orlando, FL"
+                age="72"
+                temp="98"
+              />
+            </div>
+            <div>
+              <SplitHalfCardDescription
+                name="Amazon Echo"
+                description="Get instant information, control smart devices, and enjoy entertainment with voice control."
+              />
+            </div>
           </div>
-          <div className="items-center  w-1/2 p-4">
-            <FullCard
-            />
+          <div className="h-full items-center  w-1/2 p-4">
+            <FullCard mobile={false} />
           </div>
         </div>
       </div>

@@ -104,7 +104,7 @@ const Footer = (styleProps:any) => {
   ]
 
   return (
-    <footer className="flex flex-col sm:h-screen md:h-96 w-screen text-white " style={footerStyle}>
+    <footer className="flex flex-col sm:h-screen md:h-96 w-full text-white " style={footerStyle}>
       <div className="w-full flex sm:flex-wrap md:flex-nowrap md:min-w-full md:h-3/4">
         <div className="md:w-2/5 sm:w-full" >
           <div className=" flex relative md:top-16 md:left-32 flex-col sm:left-0 top-0 ">
