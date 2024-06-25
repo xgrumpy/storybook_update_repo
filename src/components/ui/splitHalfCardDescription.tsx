@@ -21,7 +21,6 @@ export default function SplitHalfCardDescription({ name, description }: SplitCar
           priority
           data-testid="proxie-logo"
           className='max-h-10 w-10 mr-8'
-        // style={}
         />
         <span className='flex text-titleCard'>{name}</span>
       </span>
