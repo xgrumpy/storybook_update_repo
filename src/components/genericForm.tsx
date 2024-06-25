@@ -7,7 +7,7 @@ import Comps from '@/images/Comps.png';
 import Visibility from '@/images/visibility.png';
 import NonVisibility from '@/images/visibility_off.png';
 
-type AdditionalContent = React.ReactElement<{ type: "submit" }>;
+type AdditionalContent  = React.ReactElement<{ type: "submit" }>;
 
 type FormConfig = {
     fields: {

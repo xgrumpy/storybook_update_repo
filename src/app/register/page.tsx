@@ -1,7 +1,7 @@
 'use client'
 import GenericForm from '@/components/genericForm';
 import Link from 'next/link'
-import { signUpPatient} from '../../services/api'
+import { signUpPatient } from '../../services/api'
 import { useRouter } from 'next/navigation';
 import { SubmitHandler } from 'react-hook-form'; // Import SubmitHandler if not already imported
 import { useContext } from 'react';
@@ -15,7 +15,7 @@ export type SignUpInputs = {
 };
 
 export default function Register() {
-  const router = useRouter();
+  // const router = useRouter();
   const { state, dispatch } = useContext(store);
 
   const onSubmit = async (data: SignUpInputs) => {
@@ -25,11 +25,11 @@ export default function Register() {
 
   const handleSignUp = async (data: SignUpInputs) => {
     try {
-     let response =  await signUpPatient({ fullName: data.name, email: data.email, password: data.password });
+      let response = await signUpPatient({ fullName: data.name, email: data.email, password: data.password });
       // Redirect or perform other actions upon successful authentication
-      await dispatch({ type: 'SET_RESPONSE', payload: response})
-      response.data &&  localStorage.setItem('authToken', response.data.id)      
-      router.push('/Dashboard')
+      await dispatch({ type: 'SET_RESPONSE', payload: response })
+      response.data && localStorage.setItem('authToken', response.data.id)
+      // router.push('/Dashboard')
     } catch (error) {
       window.alert(`Error fetching user data: ${error}`);
       // TO-DO add error to global state for use in toast/notification
