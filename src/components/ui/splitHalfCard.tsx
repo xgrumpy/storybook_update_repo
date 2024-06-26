@@ -23,7 +23,7 @@ interface StoryBookProps {
 export default function SplitHalfCard({ name, relationship, location, age, temp }: SplitCardProps, mobile: StoryBookProps) {
 
   return (
-    <div className='flex flex-col  h-32 outline outline-outlineGrey rounded-lg bg-primaryBlue shadow-test text-white'>
+    <div className='flex flex-col  h-32 border-2 border-outlineGrey rounded-lg bg-primaryBlue shadow-test text-white'>
       <span className='flex flex-row mt-8  ml-5'>
       <Image
           src={AVI}
@@ -34,7 +34,7 @@ export default function SplitHalfCard({ name, relationship, location, age, temp 
         // style={}
         />
         <span className='flex font-semibold  text-titleCard flex justify-center items-center'>{name}</span>
-        <span className='flex text-titleCard text-blueLight font-semibold flex justify-center items-center ml-33p'>{relationship}</span>
+        <span className='flex text-titleCard text-blueLight font-semibold flex justify-center items-center ml-43p'>{relationship}</span>
       </span>
       <span className='flex flex-row mt-4  ml-5'>
 

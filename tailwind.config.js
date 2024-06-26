@@ -94,6 +94,9 @@ module.exports = {
       maxWidth: {
         '1000': '1000px',
       },
+      fontFamily: {
+        gilroy: ['Gilroy', 'Gilroy'],
+      },
       boxShadow: {
         'test': '0 4px 10px 0 rgba(0, 0, 0, 0.08)',
       },
@@ -106,16 +109,21 @@ module.exports = {
         'custom-blue-light': '#59cef7',
         'custom-blue-dark': '#596df7',
         'custom-blue-middle': '#5999f7',
+        'custom-red': '#ff5151',
+        'customGray': '#E5E5F2',
       },
       margin: {
         '15p': '15%',
-        '33p': '33%'
+        '43p': '43%'
       },
       opacity: {
         '20': '0.2',
       },
       objectFit: {
         'cover': 'cover',
+      },
+      borderWidth: {
+        '2': '2px',
       },
     },
   },

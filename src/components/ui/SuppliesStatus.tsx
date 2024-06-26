@@ -10,7 +10,7 @@ const SuppliesStatus: React.FC = () => {
     <div className="p-4 bg-white rounded">
       <h2 className="text-headingCard font-semibold mb-4">Supplies Status</h2>
       <div className="grid grid-cols-3 gap-4">
-        <div className='flex items-center outline outline-outlineGrey rounded-lg bg-white shadow-test'>
+        <div className='flex items-center border-2 border-outlineGrey rounded-lg bg-white shadow-test'>
           <div className='w-40 h-32 flex justify-center items-center'>
             <Image
               src={canes}
@@ -25,7 +25,7 @@ const SuppliesStatus: React.FC = () => {
           </div>
         </div>
         <div className="p-0.5 bg-gray-100 rounded">
-          <div className='flex items-center outline outline-outlineGrey rounded-lg bg-white shadow-test'>
+          <div className='flex items-center border-2 border-outlineGrey rounded-lg bg-white shadow-test'>
             <div className='w-40 h-32 flex justify-center items-center'>
               <Image
                 src={walker}
@@ -41,7 +41,7 @@ const SuppliesStatus: React.FC = () => {
           </div>
         </div>
         <div className="p-0.5 bg-gray-100 rounded">
-          <div className='flex items-center outline outline-outlineGrey rounded-lg bg-white shadow-test'>
+          <div className='flex items-center border-2 border-outlineGrey rounded-lg bg-white shadow-test'>
             <div className='w-40 h-32 flex justify-center items-center'>
               <Image
                 src={wheelchair}

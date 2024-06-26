@@ -35,7 +35,7 @@ export default function VitalsCard({ title, icon, date, time, dataValue, dataVal
   const iconSrc = icon && iconMap[icon] || defaultIcon;
 
   return (
-    <div className='flex items-center w-80 h-20 outline outline-outlineGrey rounded-lg bg-white shadow-test'>
+    <div className='flex items-center w-80 h-20 border-2 border-outlineGrey rounded-lg bg-white shadow-test'>
       {/* Left Section */}
       <div className="flex-1 flex flex-col">
         {/* Your left content goes here */}
@@ -54,7 +54,7 @@ export default function VitalsCard({ title, icon, date, time, dataValue, dataVal
 
       {/* Vertical Line */}
       {/* <div className="w-px bg-gray-400 h-20"></div> */}
-      <div className=" h-16 outline outline-outlineGrey"></div>
+      <div className=" h-16 border-2 border-outlineGrey"></div>
 
 
       {/* Right Section */}

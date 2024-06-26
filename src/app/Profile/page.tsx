@@ -133,7 +133,7 @@ const ProfileComponent = () => {
     <div className='flex-column w-11/12 mx-auto sm:0 md:mt-24'>
       <div className='flex mt-24 text-titleCard font-medium mb-8 mt-4'>Profile settings</div>
       <div className='flex sm:flex-col sm:h-fit md:flex-row md:h-96'>
-        <div className="flex flex-col  outline outline-outlineGrey rounded-lg bg-white shadow-test sm:flex-row sm:w-full sm:mt-8 md:flex-col md:mt-0 md:w-3/5">
+        <div className="flex flex-col  border-2 border-outlineGrey rounded-lg bg-white shadow-test sm:flex-row sm:w-full sm:mt-8 md:flex-col md:mt-0 md:w-3/5">
           {/* <!-- General Section Title --> */}
           <div className='flex sm:flex-col sm:mx-auto md:flex-row md:mx-0'>
 
@@ -186,7 +186,7 @@ const ProfileComponent = () => {
         </div>
 
         {/* PAYMENT OPTIONS */}
-        <div className='flex flex-col outline outline-outlineGrey rounded-lg bg-white shadow-test sm:ml-0 sm:w-full sm:mt-8 sm:h-96 md:ml-4 md:w-2/5 md:mt-0 md:h-full'>
+        <div className='flex flex-col border-2 border-outlineGrey rounded-lg bg-white shadow-test sm:ml-0 sm:w-full sm:mt-8 sm:h-96 md:ml-4 md:w-2/5 md:mt-0 md:h-full'>
           <span className='text-headingCard font-semibold mt-3 ml-5 inline-block text-2xl'>Payment options</span>
           <div className="flex mx-auto w-11/12 flex-row border-b border-outlineGrey pb-2 pt-4">
             <label htmlFor="messenger" className="mr-auto text-sm font-normal text-proxieSecondary">Free</label>
@@ -213,7 +213,7 @@ const ProfileComponent = () => {
 
       <div className='flex sm:flex-col md:flex-row md:mt-8'>
 
-        <div className='flex flex-col h-48 outline outline-outlineGrey rounded-lg bg-white shadow-test sm:w-full sm:mt-8 md:w-1/3 md:mt-0'>
+        <div className='flex flex-col h-48 border-2 border-outlineGrey rounded-lg bg-white shadow-test sm:w-full sm:mt-8 md:w-1/3 md:mt-0'>
           <span className='text-headingCard font-semibold mt-3 ml-5 inline-block text-2xl'>Access account</span>
           <div className='flex flex-col mx-auto my-auto w-11/12'>
 
@@ -227,7 +227,7 @@ const ProfileComponent = () => {
 
         </div>
         {/* PAYMENT OPTIONS */}
-        <div className='flex flex-col h-48 outline outline-outlineGrey rounded-lg bg-white shadow-test sm:w-full sm:mt-8 md:w-1/3 md:mt-0 md:ml-4'>
+        <div className='flex flex-col h-48 border-2 border-outlineGrey rounded-lg bg-white shadow-test sm:w-full sm:mt-8 md:w-1/3 md:mt-0 md:ml-4'>
           <span className='text-headingCard font-semibold mt-3 ml-5 inline-block text-2xl'>Notifications</span>
 
           <label className=' border-b border-outlineGrey w-11/12 mx-auto pt-4 pb-2 autoSaverSwitch relative inline-flex cursor-pointer select-none items-center'>
@@ -283,7 +283,7 @@ const ProfileComponent = () => {
           </label>
 
         </div>
-        <div className='flex flex-col h-32 outline outline-outlineGrey rounded-lg bg-white shadow-test sm:w-full sm:mt-8 md:mt-0 md:ml-4 md:w-1/3'>
+        <div className='flex flex-col h-32 border-2 border-outlineGrey rounded-lg bg-white shadow-test sm:w-full sm:mt-8 md:mt-0 md:ml-4 md:w-1/3'>
           <span className='text-headingCard font-semibold mt-3 ml-5 inline-block text-2xl'>Space & Time</span>
 
           <div className="flex mx-auto w-11/12 flex-row border-b border-outlineGrey pb-2 pt-4">

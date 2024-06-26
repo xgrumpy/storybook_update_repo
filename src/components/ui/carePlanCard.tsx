@@ -65,7 +65,7 @@ export default function CarePlanCard(mobile: StoryBookProps) {
 
 
   return (
-    <div className='w-full outline outline-outlineGrey rounded-lg bg-white shadow-test'>
+    <div className='w-full border-2 border-outlineGrey rounded-lg bg-white shadow-test'>
       <span className='text-titleCard font-semibold mt-10 ml-5 inline-block'>Care Plan Status</span>
       <div className='flex flex-row'>
         <div className='flex flex-col text-center m-auto  '>

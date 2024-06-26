@@ -44,8 +44,8 @@ const renderProfileCards = (profiles: any) => {
   return (
     profiles.map((profile: any, index: any) => {
       return (
-        <Link className=" flex-col  sm:w-full sm:mt-4 sm:h-auto  md:w-1/3 md:h-48 outline outline-outlineGrey rounded-lg bg-white shadow-test mr-7 " href={`/Profile`} passHref key={index}>
-        {/* <Link className="flex-col  w-1/3 h-44 outline outline-outlineGrey rounded-lg bg-white shadow-test mr-7" href={`/Profile/${profile.id}`} passHref key={index}> */}
+        <Link className=" flex-col  sm:w-full sm:mt-4 sm:h-auto  md:w-1/3 md:h-48 border-2 border-outlineGrey rounded-lg bg-white shadow-test mr-7 " href={`/Profile`} passHref key={index}>
+        {/* <Link className="flex-col  w-1/3 h-44 border-2 border-outlineGrey rounded-lg bg-white shadow-test mr-7" href={`/Profile/${profile.id}`} passHref key={index}> */}
 {/* //Want to make this clickable and to push to a route `/Profile/${profile.id}` */}
             {/* <div  key={index}> */}
               {/* <!-- General Section Title --> */}

@@ -9,7 +9,7 @@ const UserProfile: React.FC = () => {
   return (
     <div className="p-4 bg-white rounded">
       <div >
-        <div className="flex">
+        <div className="flex pb-4">
           <Image
             src={AVI}
             alt="location-icon"
@@ -23,7 +23,7 @@ const UserProfile: React.FC = () => {
           </div>
         </div>
         <div className="flex items-center justify-between">
-          <div className="items-center w-1/2 p-4">
+          <div className="items-center w-1/2">
             <div className="mb-3">
               <SplitHalfCard
                 name="Yvonne Adams"
@@ -40,7 +40,7 @@ const UserProfile: React.FC = () => {
               />
             </div>
           </div>
-          <div className="h-full items-center  w-1/2 p-4">
+          <div className="h-full items-center  w-1/2 pl-4">
             <FullCard mobile={false} />
           </div>
         </div>

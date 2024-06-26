@@ -6,7 +6,7 @@ import { chunkArray } from '@/utils/arrayManipulation';
 
 export const CarousselCard = ({ title, description, image }: CarousselCardType) => {
   return (
-    <div className="card w-80 h-48 bg-white text-primary-content m-4 outline outline-outlineGrey shadow-test">
+    <div className="card w-80 h-48 bg-white text-primary-content m-4 border-2 border-outlineGrey shadow-test">
       <div className="flex flex-row">
         {image && (
           <div className="w-1/5 flex flex-col">
@@ -33,7 +33,7 @@ export const CarousselCard = ({ title, description, image }: CarousselCardType) 
 
 export const DynamicCard = ({ title, description }: DynamicCardType) => {
   return (
-    <div className="card w-11/12 overflow-hidden h-48 bg-white text-primary-content m-4 outline outline-outlineGrey shadow-test">
+    <div className="card w-11/12 overflow-hidden h-48 bg-white text-primary-content m-4 border-2 border-outlineGrey shadow-test">
       <div className="flex flex-row">
         <div className="w-full px-8 flex flex-col gap-2 mt-2">
           <h2 className="card-title">{title}</h2>
